@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "issues": "playwright test --project=issues --workers=1 --headed"
+    "issues": "playwright test --project=issues --workers=1"
   },
   "keywords": [],
   "author": "",
