@@ -20,7 +20,11 @@ jobs:
     - name: Run Playwright tests
       env:
         mypass: ${secrets.PASSWORD}
-      run: PASSWORD=mypass npx playwright test login
+      run: |
+        echo: "hello world"
+        echo: ${mypass}
+        echo: ${secrets.PASSWORD}
+        PASSWORD=mypass npx playwright test login
     - name: Setup Pages
       uses: actions/configure-pages@v2
     - name: Upload artifact
