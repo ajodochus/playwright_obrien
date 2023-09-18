@@ -5,6 +5,7 @@ const PASSWORD = process.env.PASSWORD as string;
 const authFile = 'tests-examples/user.json';
 
 test('@login', async ({ page, request }) => {
+  test.setTimeout(30000);
     await page.goto('https://github.com/');
     await page.getByRole('link', { name: 'Sign in' }).click();
     await page.getByLabel('Username or email address').click();
