@@ -1,9 +1,11 @@
 import { test, expect, type Page } from '@playwright/test';
+import exp from 'constants';
 const REPO = 'repo_for_playwright';
-const USER = 'ajodochus';
+const USER = process.env.USER as string;
+const PASSWORD = process.env.PASSWORD as string;
 
-test('API test', async ({ page, request }) => {
-  await test.step(`delete repo if exists `, async () => {
+test('1', async ({ page, request }) => {
+
     const response1 = await request.delete(`/repos/${USER}/${REPO}`);
     if(response1.ok()){
       console.log("repo deleted");
@@ -12,7 +14,7 @@ test('API test', async ({ page, request }) => {
     }
   });
 
-  await test.step(`Create github item with api `, async () => {
+  test('2 @create_repo', async ({ page, request }) => {
     // Create a new repository
     const response = await request.post('/user/repos', {
       data: {
@@ -22,8 +24,7 @@ test('API test', async ({ page, request }) => {
     expect(response.ok()).toBeTruthy();
   });
 
-
-  await test.step(`Create github bug item with api `, async () => {
+  test('3', async ({ page, request }) => {
     const newIssue = await request.post(`/repos/${USER}/${REPO}/issues`, {
       data: {
         title: '[Bug] report 1',
@@ -33,7 +34,7 @@ test('API test', async ({ page, request }) => {
     expect(newIssue.ok()).toBeTruthy();
   });
 
-  await test.step(`check github item with api `, async () => {
+  test('4', async ({ page, request }) => {
     const issues = await request.get(`/repos/${USER}/${REPO}/issues`);
     expect(issues.ok()).toBeTruthy();
     expect(await issues.json()).toContainEqual(expect.objectContaining({
@@ -42,11 +43,10 @@ test('API test', async ({ page, request }) => {
     }));
   });
 
-  await test.step(`check github item with api `, async () => {
 
-  });
 
-});
+
+
 
 
 
