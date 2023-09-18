@@ -19,8 +19,8 @@ jobs:
       run: npx playwright install --with-deps
     - name: Run Playwright tests
       env:
-        PASSWORD: ${secrets.PASSWORD}
-      run: npx playwright test login PASSWORD=${secrets.PASSWORD}
+        mypass: ${secrets.PASSWORD}
+      run: npx playwright test login PASSWORD=mypass
     - name: Setup Pages
       uses: actions/configure-pages@v2
     - name: Upload artifact
