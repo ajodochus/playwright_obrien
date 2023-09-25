@@ -17,9 +17,11 @@ jobs:
       run: npm ci
     - name: Install Playwright Browsers
       run: npx playwright install chromium --with-deps
+    - name: install otpauth
+      run: npm install otpauth
     - name: run playwright tests
       run: |
-        GITHUB_PASSWORD=${{secrets.PASSWORD}} GITHUB_USER='ajodochus' npx playwright test login --workers=1
+        GITHUB_PASSWORD=${{secrets.PASSWORD}} TOTP=${{secrets.TOTP}}  GITHUB_USER='ajodochus' npx playwright test login --workers=1
     - name: Setup Pages
       uses: actions/configure-pages@v2
     - name: Upload artifact

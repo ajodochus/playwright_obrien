@@ -1,4 +1,7 @@
 
+# 2FA workflow
+https://www.checklyhq.com/blog/how-to-bypass-totp-based-2fa-login-flows-with-playwright/
+
 # pass github secrets within github workflow / acion
 run: PASSWORD=${{secrets.PASSWORD}} USER=${{secrets.TEST}} npx playwright test login 
 
