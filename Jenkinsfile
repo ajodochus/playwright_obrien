@@ -3,6 +3,17 @@
 pipeline {
     agent any 
     stages {
+        stage('test') {
+            steps {
+                script {
+                    if (env.BRANCH_NAME == 'master') {
+                        echo 'I only execute on the master branch'
+                    } else {
+                        echo 'I execute elsewhere'
+                    }
+                }
+            }
+        }
         stage('Stage 1') {
             steps {
                 sh '''
