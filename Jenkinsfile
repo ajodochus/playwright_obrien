@@ -1,3 +1,5 @@
+def url = env.BUILD_URL
+
 pipeline {
     agent any 
     stages {
@@ -5,8 +7,7 @@ pipeline {
             steps {
                 sh '''
                     echo "scanning every 2 minutes"
-                    echo "branch name: " + env.GIT_COMMIT
-                    echo gitcommit %GIT_COMMIT%
+                    echo $BUILD_URL
                 '''
             }
         }
