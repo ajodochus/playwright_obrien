@@ -5,7 +5,8 @@ pipeline {
             steps {
                 sh '''
                     echo "Multiline shell steps works too"
-                    echo "branch name: " + env.GIT_COMMIt
+                    echo "branch name: " + env.GIT_COMMIT
+                    echo gitcommit %GIT_COMMIT%
                 '''
             }
         }
