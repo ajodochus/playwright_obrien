@@ -6,8 +6,10 @@ pipeline {
         stage('Stage 1') {
             steps {
                 sh '''
-                    echo "branch name"
+                    echo "branch"
                     echo $BRANCH_NAME
+                    echo "tag"
+                    echo $TAG_NAME
                 '''
             }
         }
