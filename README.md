@@ -1,4 +1,6 @@
 
+# pass github secrets within github workflow / acion
+run: PASSWORD=${{secrets.PASSWORD}} USER=${{secrets.TEST}} npx playwright test login 
 
 # runs tests with script in pachage.json
 npm run issues 
