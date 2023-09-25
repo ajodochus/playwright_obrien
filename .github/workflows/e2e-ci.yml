@@ -19,9 +19,7 @@ jobs:
       run: npx playwright install chromium --with-deps
     - name: run playwright tests
       run: |
-        $env:GITHUB_PASSWORD=${{secrets.PASSWORD}}
-        $env:GITHUB_NAME='ajodochus'
-        npx playwright test login 
+        GITHUB_PASSWORD=${{secrets.PASSWORD}} GITHUB_USER='ajodochus' npx playwright test login --workers=1
     - name: Setup Pages
       uses: actions/configure-pages@v2
     - name: Upload artifact
