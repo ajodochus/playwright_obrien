@@ -4,12 +4,17 @@ pipeline {
     agent any 
     stages {
         stage('release') {
-            when {
-                tag 'my*'
-            }
             steps {
-                echo "Building $BRANCH_NAME"
-                echo "Building $TAG_NAME"
+                script{
+                    gitTag=sh(returnStdout: true, script: "git tag --contains | head -1").trim()
+                    if(gitTag) {
+                        echo 'tagggg: ' + gitTag
+                        def parts = gitTag.split('_')
+                        if( parts.size()==2 && parts[0]==PROJECT_NAME ) {
+                            gitTagVersion=parts[1]
+                        }
+                    }
+                }
             }
         }
         stage('test') {
