@@ -3,6 +3,15 @@
 pipeline {
     agent any 
     stages {
+        stage('release') {
+            when {
+                tag 'my*'
+            }
+            steps {
+                echo "Building $BRANCH_NAME"
+                echo "Building $TAG_NAME"
+            }
+        }
         stage('test') {
             steps {
                 script {
