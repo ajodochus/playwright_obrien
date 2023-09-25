@@ -1,6 +1,6 @@
 import { test, expect, type Page } from '@playwright/test';
-const USER = process.env.USER as string;
-const PASSWORD = process.env.PASSWORD as string;
+const USER = process.env.GITHUB_USER as string;
+const PASSWORD = process.env.GITHUB_PASSWORD as string;
 
 const authFile = 'tests-examples/user.json';
 
