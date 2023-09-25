@@ -4,6 +4,13 @@ const REPO = 'repo_for_playwright';
 const USER = process.env.USER as string;
 const PASSWORD = process.env.PASSWORD as string;
 
+test.use({
+  baseURL: process.env.APIURL,
+  extraHTTPHeaders: {
+    'Accept': 'application/vnd.github.v3+json',
+    'Authorization': 'token ' + process.env.APITOKEN,
+  },
+});
 test('1', async ({ page, request }) => {
 
     const response1 = await request.delete(`/repos/${USER}/${REPO}`);

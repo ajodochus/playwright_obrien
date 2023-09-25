@@ -40,27 +40,13 @@ export default defineConfig({
       testMatch: 'tests-examples/*login*'
     },
     {
-      name: 'api',
-      use: {
-        // All requests we send go to this API endpoint.
-        baseURL: process.env.URL, //https://api.github.com
-        extraHTTPHeaders: {
-          'Accept': 'application/vnd.github.v3+json',
-          'Authorization': 'token ' + process.env.APITOKEN,
-        },
-      },
-      dependencies: ['login'],
-    },
-    {
-      name: 'issues',
+      name: 'chrome',
       use: {
         ...devices['Desktop Chrome'],
-        baseURL: process.env.URLGUI, 
-        storageState: 'tests-examples/user.json',
       },
       //dependencies: ['login'],
-      testMatch: 'tests-examples/*issues*'
+      testMatch: 'tests-examples/*issues*',
+      dependencies: ['login'],
     },
-
   ],
 });
