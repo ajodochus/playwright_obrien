@@ -26,7 +26,6 @@ test('2FA', async ({ page, request }) => {
   await page.getByRole('button', { name: 'Sign in', exact: true }).click();
   await page.getByPlaceholder('XXXXXX').click();
   let sec = totp.generate();
-  console.log(sec as string);  
   await page.getByPlaceholder('XXXXXX').fill(sec);
   await page.getByRole('link', { name: 'Dashboard' }).click();
 });
