@@ -1,4 +1,12 @@
 
+# Gitlab
+trigger a pipline  from another projects pipeline
+https://docs.gitlab.com/ee/ci/triggers/#when-used-with-multi-project-pipelines
+
+yml .env variable handling
+https://docs.gitlab.com/ee/ci/triggers/#when-used-with-multi-project-pipelines
+
+
 # 2FA workflow
 https://www.checklyhq.com/blog/how-to-bypass-totp-based-2fa-login-flows-with-playwright/
 
