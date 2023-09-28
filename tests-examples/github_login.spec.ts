@@ -28,4 +28,5 @@ test('2FA', async ({ page, request }) => {
   let sec = totp.generate();
   await page.getByPlaceholder('XXXXXX').fill(sec);
   await page.getByRole('link', { name: 'Dashboard' }).click();
+  await page.context().storageState({ path: authFile });
 });
