@@ -5,3 +5,4 @@ node_modules/
 api.env
 .env
 tests-examples/user.json
+joomla_and_playwright/authFile.json
