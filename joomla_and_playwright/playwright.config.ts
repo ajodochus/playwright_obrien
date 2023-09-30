@@ -2,6 +2,8 @@ import { defineConfig, devices } from '@playwright/test';
 import dotenv from 'dotenv';
 import path from 'path';
 dotenv.config();
+// Alternatively, read from "../my.env" file.
+dotenv.config({ path: path.resolve(__dirname, 'joomla_and_playwright/', '.env') });
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
