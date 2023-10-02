@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Stage 1') {
             steps {
-                fileOperations([folderCopyOperation(
+            fileOperations([fileCopyOperation(
                 excludes: '',
                 flattenFiles: false,
                 includes: '/home/ajodochus/jenkins/a/a.txt',
