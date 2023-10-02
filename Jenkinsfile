@@ -10,7 +10,11 @@ pipeline {
                 flattenFiles: false,
                 includes: '/home/ajodochus/jenkins/a/a.txt',
                 targetLocation: "/home/ajodochus/jenkins/b"
-            )])
+                )])
+            }
+        }
+        stage(*more'){
+            steps{
                 sh '''
                     echo "branch"
                     echo $BRANCH_NAME
