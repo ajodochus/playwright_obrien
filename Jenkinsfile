@@ -13,7 +13,7 @@ pipeline {
                 )])
             }
         }
-        stage(*more'){
+        stage('more'){
             steps{
                 sh '''
                     echo "branch"
