@@ -6,3 +6,4 @@ api.env
 .env
 tests-examples/user.json
 joomla_and_playwright/authFile.json
+joomla_and_playwright/ftp/components/com_associations/associations.xml

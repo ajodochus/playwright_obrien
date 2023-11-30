@@ -48,5 +48,13 @@ export default defineConfig({
       testMatch: 'tests-examples/*issues*',
       dependencies: ['login'],
     },
+    {
+      name: 'demo-todo-app',
+      use: {
+        ...devices['Desktop Chrome'],
+      },
+      //dependencies: ['login'],
+      testMatch: 'tests-examples/*demo*',
+    }
   ],
 });

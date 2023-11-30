@@ -1,4 +1,7 @@
 
+# npx
+npx playwright test --project=demo-todo-app --workers=1 --headed
+
 # Gitlab
 trigger a pipline  from another projects pipeline
 https://docs.gitlab.com/ee/ci/triggers/#when-used-with-multi-project-pipelines
