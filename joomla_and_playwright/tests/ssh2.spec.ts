@@ -10,7 +10,7 @@ const remoteServer = {
 };
 
 // Replace this value with your shell command
-const commandToExecute = 'ifconfig';
+const commandToExecute = 'mysqldump -ujoom -paj.123 -h192.168.178.104 --compact joomla_db < ./dump_3.sql';
 
 // Create an instance of SshConnection
 const sshConnection = new SshConnection(remoteServer);

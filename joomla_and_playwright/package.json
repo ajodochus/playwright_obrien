@@ -9,10 +9,19 @@
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.38.1",
-    "@types/node": "^20.7.1"
+    "@types/node": "^20.10.1",
+    "mysql-import": "^5.0.26"
   },
   "dependencies": {
+    "clipboardy": "^4.0.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.6.5",
+    "mysqldump": "^3.2.0",
     "node-scp": "^0.0.23",
-    "scp": "^0.0.3"
+    "reflect-metadata": "^0.1.13",
+    "scp": "^0.0.3",
+    "ts-node": "^10.9.1",
+    "typeorm": "^0.3.17",
+    "typescript": "^5.3.2"
   }
 }

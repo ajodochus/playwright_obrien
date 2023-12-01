@@ -1,0 +1,45 @@
+{
+  "cookies": [
+    {
+      "name": "pma_lang",
+      "value": "de",
+      "domain": "192.168.178.104",
+      "path": "/phpMyAdmin/",
+      "expires": 1704056516.829788,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Strict"
+    },
+    {
+      "name": "phpMyAdmin",
+      "value": "p40rfvc8rv301bnbdghjd1em7i",
+      "domain": "192.168.178.104",
+      "path": "/phpMyAdmin/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Strict"
+    },
+    {
+      "name": "pmaUser-1",
+      "value": "f1OyHgvY%2FjqOeiNvavy5qAHLpZQ4%2Fz%2B73%2FIPsg5D9FB9J0BUvjsBnSrwUz7RLpGI%2Blc%3D",
+      "domain": "192.168.178.104",
+      "path": "/phpMyAdmin/",
+      "expires": 1704056518.279333,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Strict"
+    },
+    {
+      "name": "pmaAuth-1",
+      "value": "pSRK13POjTlFB5NK%2FQy8aGPxS0Ti3KLaYgB%2Fq4OtUh1Olp5B6zlIlqLX6nVydAW6AH7UqOwf57WiyEOfnA%3D%3D",
+      "domain": "192.168.178.104",
+      "path": "/phpMyAdmin/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Strict"
+    }
+  ],
+  "origins": []
+}
