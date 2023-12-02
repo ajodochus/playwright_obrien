@@ -1,11 +1,27 @@
 import { test, expect } from '@playwright/test';
 import { executeSSH } from '../utils/SshHelper';
-const commandToExecute = 'mysqldump -ujoom -paj.123 -h192.168.178.104 --compact joomla_db < ./dump_3.sql';
-
-(async () => console.log(await executeSSH('ls -al')))();
+import { environment } from '../utils/Environment';
 
 
+const executeCommands = async () => {
+  const commands = [
+    environment.mysql.commands.drop_database,
+    environment.mysql.commands.create_database,
+    environment.mysql.commands.restore_joomla
+  ];
+
+  for (const command of commands) {
+    console.log(await executeSSH(command));
+  }
+};
+
+executeCommands();
 
 test('test', async ({ page }) => {
  // test something
+ /*
+(async () => console.log(await executeSSH(environment.mysql.commands.drop_database)))();
+(async () => console.log(await executeSSH(environment.mysql.commands.create_database)))();
+(async () => console.log(await executeSSH(environment.mysql.commands.restore_joomla)))();
+*/
 });

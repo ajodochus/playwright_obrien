@@ -1,5 +1,5 @@
 import { Client } from 'ssh2';
-
+import { environment as env } from '../utils/Environment';
 export function executeSSH(command: string): Promise<string> {
   const config = {
     host: '192.168.178.104',
@@ -40,5 +40,5 @@ export function executeSSH(command: string): Promise<string> {
     conn.connect(config);
   });
 
-  
+
 }
