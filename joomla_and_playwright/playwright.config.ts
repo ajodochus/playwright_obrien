@@ -1,6 +1,14 @@
 import { defineConfig, devices } from '@playwright/test';
 import dotenv from 'dotenv';
 import path from 'path';
+import { language } from './utils/language_table';
+
+/*
+if (!LOC || !['de', 'eng'].includes(LOC)) {
+  console.log(`Please provide a correct environment value like "npx cross-env ENV=qa|dev|qaApi|devApi"`);
+  process.exit();
+}
+*/
 dotenv.config();
 // Alternatively, read from "../my.env" file.
 dotenv.config({ path: path.resolve(__dirname, 'joomla_and_playwright/', '.env') });
@@ -38,9 +46,10 @@ export default defineConfig({
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'],
-      locale: 'de-DE',
-     },
-    }
+      use: {
+        ...devices['Desktop Chrome'],
+        locale: language.lang_to_test,
+      },
+    },
   ],
 });

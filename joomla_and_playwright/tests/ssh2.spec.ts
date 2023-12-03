@@ -5,9 +5,11 @@ import { environment } from '../utils/Environment';
 
 const executeCommands = async () => {
   const commands = [
-    environment.mysql.commands.drop_database,
-    environment.mysql.commands.create_database,
-    environment.mysql.commands.restore_joomla
+    environment.mysql.commands.backup_joomla
+
+    //environment.mysql.commands.drop_database,
+    //environment.mysql.commands.create_database,
+    //environment.mysql.commands.restore_joomla
   ];
 
   for (const command of commands) {

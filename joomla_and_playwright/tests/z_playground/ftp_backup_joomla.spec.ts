@@ -8,7 +8,6 @@ const url_frontend = url_base + url_fe;
 const authFile = 'authFile.json';
 const lang_to_test = "de";
 
-import testdata from '../data.json';
 
 // https://www.npmjs.com/package/node-scp
 

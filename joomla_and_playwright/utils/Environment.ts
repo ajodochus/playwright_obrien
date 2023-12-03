@@ -13,3 +13,8 @@ export const environment = {
         }
     }
 }
+
+export const gvars ={
+    baseurl_joomla_fe: 'http://192.168.178.104/joomla/',
+    baseurl_joomla_be: 'http://192.168.178.104/joomla/administrator/'
+}
