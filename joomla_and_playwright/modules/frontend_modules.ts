@@ -18,7 +18,7 @@ case 'en-GB':
     break;
 default:
     console.log(`Please provide a correct environment value like "npx cross-env ENV=qa|dev|qaApi|devApi"`);
-    process.exit();
+    //process.exit();
 }
 
 export async function login_to_frontend(page: Page) {

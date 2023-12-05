@@ -1,5 +1,6 @@
 npx cross-env LANGUAGE=en-GB playwright test login_into --headed --workers=1
-
+npx playwright test -g "@backup"
+npx playwright test -g "@restore"
 pipeline {
     agent any
 
