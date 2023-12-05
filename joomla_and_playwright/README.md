@@ -1,4 +1,4 @@
-
+npx cross-env LANGUAGE=en-GB playwright test login_into --headed --workers=1
 
 pipeline {
     agent any

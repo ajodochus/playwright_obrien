@@ -1,6 +1,4 @@
 export const language = {
-    //lang_to_test: "de-DE",
-    lang_to_test: "en-GB",
     frontend: {
         loginpage:{
             user: {
@@ -21,7 +19,7 @@ export const language = {
             },
             successfully_loged_out:{
                 "de-DE":"Abmeldung erfolgreich.",
-                "en-GB":"Successfully logged out"
+                "en-GB":"You have been logged out."
             }
         }
     }

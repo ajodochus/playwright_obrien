@@ -48,7 +48,7 @@ export default defineConfig({
       name: 'chromium',
       use: {
         ...devices['Desktop Chrome'],
-        locale: language.lang_to_test,
+        locale: 'de-DE',
       },
     },
   ],

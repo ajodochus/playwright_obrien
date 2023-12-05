@@ -1,3 +1,4 @@
+import { language } from './language_table';
 export const environment = {
     mysql: {
         host:'192.168.178.104',
@@ -15,6 +16,12 @@ export const environment = {
 }
 
 export const gvars ={
-    baseurl_joomla_fe: 'http://192.168.178.104/joomla/',
+    baseurl_joomla_fe_de: 'http://192.168.178.104/joomla/index.php/de',
+    baseurl_joomla_fe_en: 'http://192.168.178.104/joomla/index.php/en',
     baseurl_joomla_be: 'http://192.168.178.104/joomla/administrator/'
+}
+
+export function get_locale(){
+    const language= process.env.LANG?.split('.')[0];
+    return language as string;
 }
