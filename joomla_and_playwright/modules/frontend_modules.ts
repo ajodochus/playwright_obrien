@@ -37,3 +37,18 @@ export async function login_to_frontend(page: Page) {
     await page.context().storageState({ path: authFile });
 
 };
+
+export async function count_table_rows(page: Page, locator : string) {
+    const tableContents = await page.$$eval(`${locator}/tr`, (rows) =>
+        rows.map((row) =>
+        Array.from(row.querySelectorAll('td, th'), (cell) => cell.textContent?.trim())
+        )
+    );
+    console.log(tableContents);
+    tableContents.forEach((row) => {
+        console.log('column1: ' + row[0]);
+        row.forEach(element => {
+           // console.log(element);
+        });
+    });   
+};
