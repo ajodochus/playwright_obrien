@@ -25,3 +25,21 @@ export function get_locale(){
     const language= process.env.LANG?.split('.')[0];
     return language as string;
 }
+
+export const table1_expected_values = {
+
+    'de-DE': [
+        ['header1', 'header2', 'header3', 'header4', 'header5'],
+        ['11', '12', '13', '14', '15'],
+        ['21', '22', '23', '24', '25'],
+        ['31', '32', '33', '34', '35']
+    ],
+    'en-GB': [
+        ['header1', 'header2', 'header3', 'header4', 'header5'],
+        ['11', '12', '13', '14', '15'],
+        ['21', '22', '23', '24', '25'],
+        ['31', '32', '33', '34', '35']
+    ]
+
+}
+    
