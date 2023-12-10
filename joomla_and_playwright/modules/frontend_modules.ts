@@ -2,6 +2,7 @@ import { gvars } from './../utils/Environment';
 import { Page } from '@playwright/test';
 import { test, expect } from '@playwright/test';
 import { language as lng } from '../utils/language_table';
+import { exec } from 'child_process';
 const authFile = 'tests/auth.json';
 
 let baseURL = gvars.baseurl_joomla_fe_en;
@@ -76,12 +77,40 @@ export function compare_2_tables(arr1: string[][], arr2: string[][]) {
   }
   if (found_diff) {
     console.log('Found differences');
-    console.log(arraylist.length);
   } else {
     console.log('No differences found');
-    console.log(arraylist.length);
   }
   return arraylist;
 }
+
+export function powershell_exec(dfd: string) {
+  const powerShellCommand = 'Start-Process -FilePath D:\\projekte\\mailslurper\\mailslurper.exe -WorkingDirectory D:\\projekte\\mailslurper\\;'
+
+  //const powerShellCommand = 'D:\;cd D:\\projekte\\mailslurper\\;.\\mailslurper.exe'; // Replace with your PowerShell command
+  exec(`powershell.exe -Command "${powerShellCommand}"`, (error, stdout, stderr) => {
+    if (error) {
+      console.error(`Error: ${error.message}`);
+      return;
+    }
+  
+    if (stderr) {
+      console.error(`PowerShell Error: ${stderr}`);
+      return;
+    }
+  
+    console.log(`PowerShell Output:\n${stdout}`);
+  });
+}
+
+export function start_mailslurpter() {
+  exec('D:\\projekte\\mailslurper\\mailslurper.exe', (error, stdout, stderr) => {
+    if (error) {
+        throw error;
+    }
+    console.log(stdout);
+});
+}
+
+
 
 
