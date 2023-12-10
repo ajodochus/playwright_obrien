@@ -1,12 +1,13 @@
 import nodemailer from 'nodemailer';
-import { exec, spawn } from 'child_process';
-import { APIRequestContext } from '@playwright/test';
-import exp from 'constants';
-import anxios from 'axios';
+import axios from 'axios';
+
+const apiUrl = 'http://127.0.0.1:8085/mail';
 const processName = 'mailslurper';
 const timeoutDuration = 10000; // 10 seconds
 
 // api: https://github.com/mailslurper/mailslurper/wiki/API-Guide
+// cheat sheet: https://quickref.me/vscode.html
+
 
 const transporter = nodemailer.createTransport({
   host: '127.0.0.1',
@@ -41,21 +42,14 @@ export async function send_email(mailOptions) {
       console.log('Email sent:', info.response);
     }
   });
-  await sleep(10000);
+  console.log('waiting for mailslurper to receive email...');
+  await sleep(timeoutDuration);
 }
 
-
-// Import the axios library
-import axios from 'axios';
-
-// Define the API endpoint URL
-const apiUrl = 'http://127.0.0.1:8085/mail';
-// Define the data you want to send in the request body
 const requestData = {
   'pruneCode': 'all'
 };
 
-// Use async/await to make the request
 export async function delete_all_mails() {
   try {
     const response = await axios.delete(apiUrl, { data: requestData });
