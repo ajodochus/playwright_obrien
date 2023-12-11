@@ -43,7 +43,6 @@ export async function send_email(mailOptions) {
     }
   });
   console.log('waiting for mailslurper to receive email...');
-  await sleep(timeoutDuration);
 }
 
 const requestData = {

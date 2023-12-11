@@ -7,3 +7,6 @@ api.env
 tests-examples/user.json
 joomla_and_playwright/authFile.json
 joomla_and_playwright/ftp/components/com_associations/associations.xml
+joomla_and_playwright/utils/mailslurper/mailslurper.exe
+joomla_and_playwright/utils/mailslurper/config.json
+joomla_and_playwright/utils/mailslurper/mailslurper.db
